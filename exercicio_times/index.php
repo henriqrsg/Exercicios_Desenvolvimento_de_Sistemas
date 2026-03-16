@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quantidade de títulos</title>
 </head>
 <body>
     <table width= "100%" border= '1'>
@@ -21,6 +21,7 @@
             <th>Nome</th>
             <th>Data Criação</th>
             <th>Quantidade de Títulos</th>
+            <th>Ações</th>
         </tr>
 
         <?php
@@ -31,6 +32,7 @@
                 <td><?php echo $linha->nome ?></td>
                 <td><?php echo $linha->data_criacao ?></td>
                 <td><?php echo $linha->quant_titulos ?></td>
+                <td><a href="excluir.php?id=<?php echo $linha->id ?>">Excluir</a></td>
             </tr>
         <?php
             }        
