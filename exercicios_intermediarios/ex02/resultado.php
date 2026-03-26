@@ -17,7 +17,7 @@
     
     <?php
 
-    $n = $_GET['n'];;
+    $n = $_GET['n'];
 
     if ($n % 2 == 0):
         echo('O número ' . $n . ' é par');
