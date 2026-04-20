@@ -1,6 +1,7 @@
 <?php
 
-    include "conexao.php";
+    include "../conexao.php";
+
     $id = isset($_POST['id']) ? $_POST['id'] : null;
 
     $nome = $_POST['nome'];
