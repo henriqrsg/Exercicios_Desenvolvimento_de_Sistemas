@@ -1,0 +1,24 @@
+-- Criar e usar o banco de dados
+CREATE DATABASE IF NOT EXISTS tarefas;
+USE tarefas;
+
+-- Tabela de usuários
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL,
+    senha VARCHAR(32) NOT NULL
+);
+
+-- Tabela de tarefas
+CREATE TABLE IF NOT EXISTS tarefas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    status ENUM('pendente', 'concluida') DEFAULT 'pendente',
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+-- Usuário de teste: usuario=admin, senha=MD5("123456")
+INSERT INTO usuarios (usuario, senha) VALUES ('admin', MD5('123456'));
